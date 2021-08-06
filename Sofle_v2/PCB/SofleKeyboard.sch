@@ -675,8 +675,6 @@ Text GLabel 5500 2250 1    50   Input ~ 0
 col5
 Wire Wire Line
 	5250 5150 6100 5150
-Text GLabel 3850 3200 2    50   Input ~ 0
-col5
 Text GLabel 3850 3100 2    50   Input ~ 0
 col4
 Text GLabel 3850 3000 2    50   Input ~ 0
@@ -701,7 +699,6 @@ F 3 "" H 4150 2400 50  0001 C CNN
 $EndComp
 Text GLabel 3850 2300 2    50   Input ~ 0
 RESET
-NoConn ~ 3850 2100
 Text GLabel 2550 2100 0    50   Input ~ 0
 LED
 Text GLabel 2550 2600 0    50   Input ~ 0
@@ -764,52 +761,6 @@ F 3 "" H 4550 4950 50  0001 C CNN
 $EndComp
 Text GLabel 4400 5100 3    50   Input ~ 0
 SDA
-$Comp
-L SofleKeyboard-rescue:MJ-4PP-9-Lily58-cache-Lily58_Pro-rescue J2
-U 1 1 5B742D8C
-P 2700 4350
-F 0 "J2" H 2650 4650 60  0000 C CNN
-F 1 "4PIN" H 2650 4050 60  0000 C CNN
-F 2 "SofleKeyboard-footprint:MJ-4PP-9" H 2700 4300 60  0001 C CNN
-F 3 "" H 2700 4300 60  0000 C CNN
-	1    2700 4350
-	1    0    0    -1  
-$EndComp
-$Comp
-L SofleKeyboard-rescue:LED-Lily58-cache-Lily58_Pro-rescue J1
-U 1 1 5B74AE32
-P 4000 3550
-F 0 "J1" H 4000 3750 50  0000 C CNN
-F 1 "LED" H 4000 3350 50  0000 C CNN
-F 2 "SofleKeyboard-footprint:LED" H 4000 3550 50  0001 C CNN
-F 3 "" H 4000 3550 50  0001 C CNN
-	1    4000 3550
-	1    0    0    -1  
-$EndComp
-$Comp
-L SofleKeyboard-rescue:VCC-Lily58-cache-Lily58_Pro-rescue #PWR07
-U 1 1 5B74B06A
-P 4200 3450
-F 0 "#PWR07" H 4200 3300 50  0001 C CNN
-F 1 "VCC" H 4217 3623 50  0000 C CNN
-F 2 "" H 4200 3450 50  0001 C CNN
-F 3 "" H 4200 3450 50  0001 C CNN
-	1    4200 3450
-	1    0    0    -1  
-$EndComp
-$Comp
-L SofleKeyboard-rescue:GND-Lily58-cache-Lily58_Pro-rescue #PWR08
-U 1 1 5B74B15A
-P 4200 3650
-F 0 "#PWR08" H 4200 3400 50  0001 C CNN
-F 1 "GND" H 4205 3477 50  0000 C CNN
-F 2 "" H 4200 3650 50  0001 C CNN
-F 3 "" H 4200 3650 50  0001 C CNN
-	1    4200 3650
-	1    0    0    -1  
-$EndComp
-Text GLabel 4200 3550 2    50   Input ~ 0
-LED
 $Comp
 L SofleKeyboard-rescue:GND-Lily58-cache-Lily58_Pro-rescue #PWR010
 U 1 1 5B74C10F
@@ -1128,40 +1079,6 @@ Wire Wire Line
 	2550 2400 2300 2400
 Connection ~ 2550 2400
 $Comp
-L power:GND #PWR02
-U 1 1 5B8F3218
-P 3250 4600
-F 0 "#PWR02" H 3250 4350 50  0001 C CNN
-F 1 "GND" H 3255 4427 50  0000 C CNN
-F 2 "" H 3250 4600 50  0001 C CNN
-F 3 "" H 3250 4600 50  0001 C CNN
-	1    3250 4600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VCC #PWR01
-U 1 1 5B8F42DA
-P 3250 4150
-F 0 "#PWR01" H 3250 4000 50  0001 C CNN
-F 1 "VCC" H 3267 4323 50  0000 C CNN
-F 2 "" H 3250 4150 50  0001 C CNN
-F 3 "" H 3250 4150 50  0001 C CNN
-	1    3250 4150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3250 4350 3150 4350
-Wire Wire Line
-	3150 4450 3250 4450
-Wire Wire Line
-	3250 4150 3250 4350
-Wire Wire Line
-	3250 4450 3250 4600
-Text GLabel 2550 2200 0    50   Input ~ 0
-DATA
-Text GLabel 3650 4300 2    50   Input ~ 0
-DATA
-$Comp
 L SofleKeyboard-rescue:OLED-Lily58-cache-Lily58_Pro-rescue J3
 U 1 1 5B91007B
 P 2350 5100
@@ -1432,62 +1349,59 @@ Wire Wire Line
 	4000 6150 3400 6150
 Wire Wire Line
 	3400 6150 3400 6250
-Text Label 3350 4550 0    50   ~ 0
-i2c_d
-Text Label 3300 4200 0    50   ~ 0
-i2c_c
+NoConn ~ 2550 2200
 $Comp
-L Device:Jumper_NO_Small JP9
-U 1 1 5E98AECB
-P 3600 4100
-F 0 "JP9" V 3554 4148 50  0000 L CNN
-F 1 "I2CSCL" V 3650 4150 50  0000 L CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 3600 4100 50  0001 C CNN
-F 3 "~" H 3600 4100 50  0001 C CNN
-	1    3600 4100
-	0    1    1    0   
+L Switch:SW_SPST PWRSW1
+U 1 1 6106F057
+P 3250 4150
+F 0 "PWRSW1" H 3250 4385 50  0000 C CNN
+F 1 "SW_SPST" H 3250 4294 50  0000 C CNN
+F 2 "" H 3250 4150 50  0001 C CNN
+F 3 "~" H 3250 4150 50  0001 C CNN
+	1    3250 4150
+	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3150 4200 3600 4200
-Text GLabel 3700 4850 2    50   Input ~ 0
-SDA
-Text GLabel 3650 3850 2    50   Input ~ 0
-SCL
-Wire Wire Line
-	3600 3850 3600 4000
+Text GLabel 3050 4150 0    50   Input ~ 0
+BATT_IN
+Text GLabel 3450 4150 2    50   Input ~ 0
+VIN
+Text GLabel 3850 2100 2    50   Input ~ 0
+VIN
+Text GLabel 4345 4045 2    50   Input ~ 0
+LED
 $Comp
-L Device:Jumper_NO_Small JP10
-U 1 1 5E9C09A0
-P 3600 4650
-F 0 "JP10" V 3554 4698 50  0000 L CNN
-F 1 "IC2SDA" V 3645 4698 50  0000 L CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 3600 4650 50  0001 C CNN
-F 3 "~" H 3600 4650 50  0001 C CNN
-	1    3600 4650
-	0    1    1    0   
+L SofleKeyboard-rescue:GND-Lily58-cache-Lily58_Pro-rescue #PWR08
+U 1 1 5B74B15A
+P 4345 4145
+F 0 "#PWR08" H 4345 3895 50  0001 C CNN
+F 1 "GND" H 4350 3972 50  0000 C CNN
+F 2 "" H 4345 4145 50  0001 C CNN
+F 3 "" H 4345 4145 50  0001 C CNN
+	1    4345 4145
+	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3150 4550 3600 4550
-Wire Wire Line
-	3600 4750 3600 4850
 $Comp
-L Device:Jumper_NC_Small JP11
-U 1 1 5E9D186B
-P 3600 4450
-F 0 "JP11" V 3554 4525 50  0000 L CNN
-F 1 "Serial" V 3645 4525 50  0000 L CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged2Bar_Pad1.0x1.5mm" H 3600 4450 50  0001 C CNN
-F 3 "~" H 3600 4450 50  0001 C CNN
-	1    3600 4450
-	0    1    1    0   
+L SofleKeyboard-rescue:VCC-Lily58-cache-Lily58_Pro-rescue #PWR07
+U 1 1 5B74B06A
+P 4345 3945
+F 0 "#PWR07" H 4345 3795 50  0001 C CNN
+F 1 "VCC" H 4362 4118 50  0000 C CNN
+F 2 "" H 4345 3945 50  0001 C CNN
+F 3 "" H 4345 3945 50  0001 C CNN
+	1    4345 3945
+	1    0    0    -1  
 $EndComp
-Connection ~ 3600 4550
-Wire Wire Line
-	3600 4350 3600 4300
-Wire Wire Line
-	3600 4300 3650 4300
-Wire Wire Line
-	3600 3850 3650 3850
-Wire Wire Line
-	3600 4850 3700 4850
+$Comp
+L SofleKeyboard-rescue:LED-Lily58-cache-Lily58_Pro-rescue J1
+U 1 1 5B74AE32
+P 4145 4045
+F 0 "J1" H 4145 4245 50  0000 C CNN
+F 1 "LED" H 4145 3845 50  0000 C CNN
+F 2 "SofleKeyboard-footprint:LED" H 4145 4045 50  0001 C CNN
+F 3 "" H 4145 4045 50  0001 C CNN
+	1    4145 4045
+	1    0    0    -1  
+$EndComp
+Text GLabel 3850 3200 2    50   Input ~ 0
+col5
 $EndSCHEMATC
